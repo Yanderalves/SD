@@ -8,7 +8,7 @@ class Aluno(object): # Implementacao
     def getDisciplina(self):
         return "Sistemas Distribuidos!"
     
-daemon = Pyro4.Daemon()         # Faz um Pyro daemon
+daemon = Pyro4.Daemon(host="192.168.31.253")         # Faz um Pyro daemon
 uri2 = daemon.register(Aluno) # Registrar o como um objeto Pyro
 ns = Pyro4.locateNS()           # Encontra o nome do server
 print(uri2)
